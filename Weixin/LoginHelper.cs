@@ -38,9 +38,15 @@ namespace CSWeiXin.Weixin
 
         static string pingdUrlTemple = "https://pingtas.qq.com/webview/pingd?dm=wx.qq.com&pvi={0}&si={1}&url=/&arg=%26lang%3Dzh_CN&ty=&rdm=wx.qq.com&rurl=/&rarg=%26lang%3Dzh_CN&adt=&r2=43209744&r3=-1&r4=1&fl=25.0&scr=1600x900&scl=24-bit&lg=zh-cn&jv=&tz=-8&ct=&ext=adid=&pf=&random=1495867248819";
 
+
+        #region wx wx2
+        public static bool WX2 { private set; get; } = false;
+
         static string statReportUrl = "https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxstatreport?fun=new";
 
         static string loginPageUrlTemple = "https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket={0}&uuid={1}&lang=zh_CN&scan={2}&fun=new&version=v2&lang=zh_CN";
+        #endregion
+
 
 
         public static string pgv_pvi = RandomUtil.GetRandom();
@@ -95,7 +101,7 @@ namespace CSWeiXin.Weixin
                     reqCookies.Add(new Cookie("pgv_pvi", LoginHelper.pgv_pvi, "/", "wx.qq.com"));
                     reqCookies.Add(new Cookie("pgv_si", LoginHelper.pgv_si, "/", "wx.qq.com"));
                     CookieContainer resCookies = null;
-                    WebClientUtil.GetResponseOnCookie(pingdUrl, "post", reqCookies, out resCookies, null, "text/html", int.MaxValue);
+                    WebClientUtil.GetResponseOnCookie(pingdUrl, "post", reqCookies, out resCookies, null, "text/html");
                 }
                 catch (Exception ex)
                 {
@@ -121,6 +127,11 @@ namespace CSWeiXin.Weixin
         public static void LoginPage()
         {
             var loginPageUrl = string.Format(loginPageUrlTemple, LoginHelper.Ticket, LoginHelper.UUID, LoginHelper.Scan);
+
+            if (WX2)
+            {
+                loginPageUrl = loginPageUrl.Replace("//wx.", "//wx2.");
+            }
 
             CookieContainer resCookies = null;
 
@@ -173,6 +184,11 @@ namespace CSWeiXin.Weixin
                     LoginHelper.Scan = result.Substring(result.LastIndexOf("=") + 1);
                     LoginHelper.Ticket = result.Substring(result.IndexOf("ticket=") + 7);
                     LoginHelper.Ticket = LoginHelper.Ticket.Substring(0, LoginHelper.Ticket.IndexOf("&"));
+
+                    if (result.IndexOf("//wx2.") > -1)
+                    {
+                        WX2 = true;
+                    }
 
                     WebClientUtil.GetResponseOnCookie(result, "get", reqCookies, out resCookies, null);
 

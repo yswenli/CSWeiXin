@@ -82,6 +82,11 @@ namespace CSWeiXin.Weixin
 
             var SendMsg = string.Format(SendMsgTemple, LoginHelper.LoginPageXml.pass_ticket);
 
+            if (LoginHelper.WX2)
+            {
+                SendMsg = SendMsg.Replace("//wx.", "//wx2.");
+            }
+
             var dic = new Dictionary<string, string>();
 
             dic.Add(WebClientUtil.JsonDataPrex, json);
@@ -127,6 +132,11 @@ namespace CSWeiXin.Weixin
             CookieContainer resCookies = null;
 
             var SendImpageUrl = string.Format(SendImpageUrlTemple, LoginHelper.LoginPageXml.pass_ticket);
+
+            if (LoginHelper.WX2)
+            {
+                SendImpageUrl = SendImpageUrl.Replace("//wx.", "//wx2.");
+            }
 
             var json = "{\"BaseRequest\":{\"Uin\":" + LoginHelper.LoginPageCookie.wxuin + ",\"Sid\":\"" + LoginHelper.LoginPageCookie.wxsid + "\",\"Skey\":\"" + LoginHelper.LoginPageXml.skey + "\",\"DeviceID\":\"e856174200109311\"},\"Msg\":{\"Type\":3,\"MediaId\":\"" + mediaId + "\",\"Content\":\"\",\"FromUserName\":\"" + fromUserName + "\",\"ToUserName\":\"" + toUserName + "\",\"LocalID\":\"14963106567540883\",\"ClientMsgId\":\"14963106567540883\"},\"Scene\":0}";
 
@@ -247,6 +257,11 @@ namespace CSWeiXin.Weixin
 
             var checkeUrl = string.Format(CheckeUrlTemple, CalcTimeUtil.GetUnixDateTime() + "000", LoginHelper.LoginPageXml.skey, LoginHelper.LoginPageCookie.wxsid, LoginHelper.LoginPageCookie.wxuin, synckey);
 
+            if (LoginHelper.WX2)
+            {
+                checkeUrl = checkeUrl.Replace("//webpush.", "//webpush2.");
+            }
+
             return WebClientUtil.GetResponseOnCookie(checkeUrl, "get", reqCookies, out resCookies);
         }
 
@@ -300,6 +315,11 @@ namespace CSWeiXin.Weixin
             CookieContainer resCookies = null;
 
             var SyncUrl = string.Format(SyncUrlTemple, LoginHelper.LoginPageCookie.wxsid, LoginHelper.LoginPageXml.skey, LoginHelper.LoginPageXml.pass_ticket);
+
+            if (LoginHelper.WX2)
+            {
+                SyncUrl = SyncUrl.Replace("//wx.", "//wx2.");
+            }
 
             var dic = new Dictionary<string, string>();
 

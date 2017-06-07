@@ -206,7 +206,7 @@ namespace CSWeiXin.Util
 
         public static string JsonDataPrex = "***json***";
 
-        public static string GetResponseOnCookie(string url, string method, CookieContainer reqCookies, out CookieContainer resCookies, Dictionary<string, string> @params = null, string contentType = "application/x-www-form-urlencoded;charset=UTF-8", int timeOut = 25000)
+        public static string GetResponseOnCookie(string url, string method, CookieContainer reqCookies, out CookieContainer resCookies, Dictionary<string, string> @params = null, string contentType = "application/x-www-form-urlencoded;charset=UTF-8", bool wx2 = false, int timeOut = 25000)
         {
             string result = string.Empty;
             resCookies = null;
@@ -218,11 +218,18 @@ namespace CSWeiXin.Util
                 request.Headers.Add("Accept-Language", "zh-CN,zh;q=0.8");
                 request.ContentType = contentType;
                 request.KeepAlive = true;
-                request.Timeout = 20 * 1000;
+                request.ProtocolVersion = HttpVersion.Version11;
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+                request.Timeout = timeOut;
                 request.AllowAutoRedirect = true;
                 request.Host = "login.wx.qq.com";
                 request.Headers.Add("Origin", "https://wx.qq.com");
                 request.Referer = "https://wx.qq.com/?&lang=zh_CN";
+                if (wx2)
+                {
+                    request.Headers.Add("Origin", "https://wx2.qq.com");
+                    request.Referer = "https://wx2.qq.com/?&lang=zh_CN";
+                }
                 request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36";
                 request.Headers.Add("Access-Control-Allow-Origin", "*");
                 request.Headers.Add("Pragma", "no-cache");
@@ -309,7 +316,7 @@ namespace CSWeiXin.Util
         }
 
 
-        public static Stream GetResponseOnCookie(string url, string method, CookieContainer reqCookies, Dictionary<string, string> @params = null, string contentType = "application/x-www-form-urlencoded;charset=UTF-8", int timeOut = 25000)
+        public static Stream GetResponseOnCookie(string url, string method, CookieContainer reqCookies, Dictionary<string, string> @params = null, string contentType = "application/x-www-form-urlencoded;charset=UTF-8", bool wx2 = false, int timeOut = 25000)
         {
             string result = string.Empty;
             try
@@ -320,11 +327,18 @@ namespace CSWeiXin.Util
                 request.Headers.Add("Accept-Language", "zh-CN,zh;q=0.8");
                 request.ContentType = contentType;
                 request.KeepAlive = true;
-                request.Timeout = 20 * 1000;
+                request.ProtocolVersion = HttpVersion.Version11;
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+                request.Timeout = timeOut;
                 request.AllowAutoRedirect = true;
                 request.Host = "login.wx.qq.com";
                 request.Headers.Add("Origin", "https://wx.qq.com");
                 request.Referer = "https://wx.qq.com/?&lang=zh_CN";
+                if (wx2)
+                {
+                    request.Headers.Add("Origin", "https://wx2.qq.com");
+                    request.Referer = "https://wx2.qq.com/?&lang=zh_CN";
+                }
                 request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36";
                 request.Headers.Add("Access-Control-Allow-Origin", "*");
                 request.Headers.Add("Pragma", "no-cache");
@@ -408,7 +422,7 @@ namespace CSWeiXin.Util
         /// <param name="pass_ticket"></param>
         /// <param name="timeOut"></param>
         /// <returns></returns>
-        public static string UploadMediaOnCookie(string url, string mediaName, string uploadmediarequest, string webwx_data_ticket, string pass_ticket, int timeOut = 25000)
+        public static string UploadMediaOnCookie(string url, string mediaName, string uploadmediarequest, string webwx_data_ticket, string pass_ticket, bool wx2 = false, int timeOut = 25000)
         {
             string result = string.Empty;
             try
@@ -419,11 +433,18 @@ namespace CSWeiXin.Util
                 request.Headers.Add("Accept-Language", "zh-CN,zh;q=0.8");
                 request.ContentType = "multipart/form-data; boundary=----WebKitFormBoundarya4gGLw5MjIJx7nyC";
                 request.KeepAlive = true;
-                request.Timeout = 20 * 1000;
+                request.ProtocolVersion = HttpVersion.Version11;
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+                request.Timeout = timeOut;
                 request.AllowAutoRedirect = true;
                 request.Host = "file.wx.qq.com";
                 request.Headers.Add("Origin", "https://wx.qq.com");
                 request.Referer = "https://wx.qq.com/?&lang=zh_CN";
+                if (wx2)
+                {
+                    request.Headers.Add("Origin", "https://wx2.qq.com");
+                    request.Referer = "https://wx2.qq.com/?&lang=zh_CN";
+                }
                 request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36";
                 request.Headers.Add("Access-Control-Allow-Origin", "*");
                 request.Headers.Add("Pragma", "no-cache");

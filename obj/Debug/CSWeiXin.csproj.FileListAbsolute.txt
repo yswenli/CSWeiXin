@@ -18,3 +18,4 @@ E:\百度云\Develop\案例\C#微信\CSWeiXin\obj\Debug\CSWeiXin.csproj.Generate
 E:\百度云\Develop\案例\C#微信\CSWeiXin\obj\Debug\CSWeiXin.exe
 E:\百度云\Develop\案例\C#微信\CSWeiXin\obj\Debug\CSWeiXin.pdb
 E:\百度云\Develop\案例\C#微信\CSWeiXin\obj\Debug\CSWeiXin.Controls.Displayer.resources
+E:\百度云\Develop\案例\C#微信\CSWeiXin\obj\Debug\CSWeiXin.csprojResolveAssemblyReference.cache
