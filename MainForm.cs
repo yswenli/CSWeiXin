@@ -289,6 +289,7 @@ namespace CSWeiXin
                 choose = e.SelectSubItem.NicName;
 
                 displayer.Html = MessageUtil.Get(choose);
+                displayer.GoBottom();
             }
         }
 

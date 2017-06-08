@@ -1,0 +1,21 @@
+
+2017-06-07 18:05:01.029  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=QegESMQH5w==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-07 18:05:26.377  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=Yew9_abbGA==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-07 18:05:51.750  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=YZQKbyoUPg==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295

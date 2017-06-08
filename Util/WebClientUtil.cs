@@ -218,8 +218,7 @@ namespace CSWeiXin.Util
                 request.Headers.Add("Accept-Language", "zh-CN,zh;q=0.8");
                 request.ContentType = contentType;
                 request.KeepAlive = true;
-                request.ProtocolVersion = HttpVersion.Version11;
-                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+                request.ProtocolVersion = HttpVersion.Version11;                
                 request.Timeout = timeOut;
                 request.AllowAutoRedirect = true;
                 request.Host = "login.wx.qq.com";
@@ -310,13 +309,13 @@ namespace CSWeiXin.Util
             }
             catch (Exception ex)
             {
-
+                LogUtil.WriteLog("GetResponseOnCookie", ex, url);
             }
             return result;
         }
 
 
-        public static Stream GetResponseOnCookie(string url, string method, CookieContainer reqCookies, Dictionary<string, string> @params = null, string contentType = "application/x-www-form-urlencoded;charset=UTF-8", bool wx2 = false, int timeOut = 25000)
+        public static Stream GetImageOnCookie(string url, string method, CookieContainer reqCookies, Dictionary<string, string> @params = null, string contentType = "application/x-www-form-urlencoded;charset=UTF-8", bool wx2 = false, int timeOut = 25000)
         {
             string result = string.Empty;
             try
@@ -328,7 +327,6 @@ namespace CSWeiXin.Util
                 request.ContentType = contentType;
                 request.KeepAlive = true;
                 request.ProtocolVersion = HttpVersion.Version11;
-                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
                 request.Timeout = timeOut;
                 request.AllowAutoRedirect = true;
                 request.Host = "login.wx.qq.com";
@@ -407,7 +405,7 @@ namespace CSWeiXin.Util
             }
             catch (Exception ex)
             {
-
+                LogUtil.WriteLog("GetImageOnCookie", ex, url);
             }
             return null;
         }
@@ -434,7 +432,6 @@ namespace CSWeiXin.Util
                 request.ContentType = "multipart/form-data; boundary=----WebKitFormBoundarya4gGLw5MjIJx7nyC";
                 request.KeepAlive = true;
                 request.ProtocolVersion = HttpVersion.Version11;
-                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
                 request.Timeout = timeOut;
                 request.AllowAutoRedirect = true;
                 request.Host = "file.wx.qq.com";
@@ -542,7 +539,7 @@ namespace CSWeiXin.Util
             }
             catch (Exception ex)
             {
-
+                LogUtil.WriteLog("UploadMediaOnCookie", ex, url);
             }
             return result;
         }

@@ -152,6 +152,7 @@
     <Compile Include="Util\AESUtil.cs" />
     <Compile Include="Util\CalcTimeUtil.cs" />
     <Compile Include="Util\DataUtil.cs" />
+    <Compile Include="Util\LogUtil.cs" />
     <Compile Include="Util\MessageUtil.cs" />
     <Compile Include="Util\RandomUtil.cs" />
     <Compile Include="Util\SerializeUtil.cs" />

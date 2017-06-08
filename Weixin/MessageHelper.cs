@@ -217,6 +217,9 @@ namespace CSWeiXin.Weixin
 
         private static string CheckeSync()
         {
+            if (LoginHelper.LoginPageCookie == null || LoginHelper.LoginPageCookie == null)
+                return string.Empty;
+
             var reqCookies = new CookieContainer();
 
             reqCookies.Add(new Cookie("pgv_pvi", LoginHelper.pgv_pvi, "/", "wx.qq.com"));
@@ -238,7 +241,7 @@ namespace CSWeiXin.Weixin
 
             var synckey = string.Empty;
 
-            if ((preSyncKey == null || preSyncKey.Count == 0) && InitHelper.WebWeixinInit.SyncKey != null && InitHelper.WebWeixinInit.SyncKey.Count > 0)
+            if (InitHelper.WebWeixinInit != null && (preSyncKey == null || preSyncKey.Count == 0) && InitHelper.WebWeixinInit.SyncKey != null && InitHelper.WebWeixinInit.SyncKey.Count > 0)
             {
                 foreach (var item in InitHelper.WebWeixinInit.SyncKey.List)
                 {
@@ -267,65 +270,70 @@ namespace CSWeiXin.Weixin
 
         private static WXSync SyncMessage()
         {
-            var synckey = string.Empty;
-
-            int count = 0;
-
-            if (preSyncKey == null || preSyncKey.Count == 0)
+            if (InitHelper.WebWeixinInit != null)
             {
-                foreach (var item in InitHelper.WebWeixinInit.SyncKey.List)
+                var synckey = string.Empty;
+
+                int count = 0;
+
+                if (preSyncKey == null || preSyncKey.Count == 0)
                 {
-                    synckey += "{\"Key\":" + item.Key + ",\"Val\":" + item.Val + "},";
+                    foreach (var item in InitHelper.WebWeixinInit.SyncKey.List)
+                    {
+                        synckey += "{\"Key\":" + item.Key + ",\"Val\":" + item.Val + "},";
+                    }
+                    if (!string.IsNullOrEmpty(synckey))
+                        synckey = synckey.Substring(0, synckey.Length - 1);
+                    count = InitHelper.WebWeixinInit.SyncKey.Count;
                 }
-                if (!string.IsNullOrEmpty(synckey))
-                    synckey = synckey.Substring(0, synckey.Length - 1);
-                count = InitHelper.WebWeixinInit.SyncKey.Count;
-            }
-            else if (preSyncKey.List != null && preSyncKey.List.Count > 0)
-            {
-                foreach (var item in preSyncKey.List)
+                else if (preSyncKey.List != null && preSyncKey.List.Count > 0)
                 {
-                    synckey += "{\"Key\":" + item.Key + ",\"Val\":" + item.Val + "},";
+                    foreach (var item in preSyncKey.List)
+                    {
+                        synckey += "{\"Key\":" + item.Key + ",\"Val\":" + item.Val + "},";
+                    }
+                    if (!string.IsNullOrEmpty(synckey))
+                        synckey = synckey.Substring(0, synckey.Length - 1);
+                    count = preSyncKey.Count;
                 }
-                if (!string.IsNullOrEmpty(synckey))
-                    synckey = synckey.Substring(0, synckey.Length - 1);
-                count = preSyncKey.Count;
+
+
+                var json = "{\"BaseRequest\":{\"Uin\":" + LoginHelper.LoginPageCookie.wxuin + ",\"Sid\":\"" + LoginHelper.LoginPageCookie.wxsid + "\",\"Skey\":\"" + LoginHelper.LoginPageXml.skey + "\",\"DeviceID\":\"e370515259583130\"},\"SyncKey\":{\"Count\":" + count + ",\"List\":[" + synckey + "]},\"rr\":-" + CalcTimeUtil.GetUnixDateTime() + "}";
+
+
+                var reqCookies = new CookieContainer();
+                reqCookies.Add(new Cookie("pgv_pvi", LoginHelper.pgv_pvi, "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("pgv_si", LoginHelper.pgv_si, "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("refreshTimes", "2", "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("MM_WX_NOTIFY_STATE", "1", "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("MM_WX_SOUND_STATE", "1", "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("mm_lang", "zh_CN", "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("webwxuvid", LoginHelper.LoginPageCookie.webwxuvid, "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("webwx_auth_ticket", LoginHelper.LoginPageCookie.webwx_auth_ticket, "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("webwx_data_ticket", LoginHelper.LoginPageCookie.webwx_data_ticket, "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("login_frequency", "1", "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("last_wxuin", "LoginHelper.LoginPageCookie.wxuin", "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("wxloadtime", "1495855277_expired", "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("wxuin", LoginHelper.LoginPageCookie.wxuin, "/", "wx.qq.com"));
+                reqCookies.Add(new Cookie("wxsid", LoginHelper.LoginPageCookie.wxsid, "/", "wx.qq.com"));
+
+                CookieContainer resCookies = null;
+
+                var SyncUrl = string.Format(SyncUrlTemple, LoginHelper.LoginPageCookie.wxsid, LoginHelper.LoginPageXml.skey, LoginHelper.LoginPageXml.pass_ticket);
+
+                if (LoginHelper.WX2)
+                {
+                    SyncUrl = SyncUrl.Replace("//wx.", "//wx2.");
+                }
+
+                var dic = new Dictionary<string, string>();
+
+                dic.Add(WebClientUtil.JsonDataPrex, json);
+
+                return SerializeUtil.Deserialize<WXSync>(WebClientUtil.GetResponseOnCookie(SyncUrl, "post", reqCookies, out resCookies, dic, "application/json;charset=UTF-8"));
             }
-
-
-            var json = "{\"BaseRequest\":{\"Uin\":" + LoginHelper.LoginPageCookie.wxuin + ",\"Sid\":\"" + LoginHelper.LoginPageCookie.wxsid + "\",\"Skey\":\"" + LoginHelper.LoginPageXml.skey + "\",\"DeviceID\":\"e370515259583130\"},\"SyncKey\":{\"Count\":" + count + ",\"List\":[" + synckey + "]},\"rr\":-" + CalcTimeUtil.GetUnixDateTime() + "}";
-
-
-            var reqCookies = new CookieContainer();
-            reqCookies.Add(new Cookie("pgv_pvi", LoginHelper.pgv_pvi, "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("pgv_si", LoginHelper.pgv_si, "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("refreshTimes", "2", "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("MM_WX_NOTIFY_STATE", "1", "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("MM_WX_SOUND_STATE", "1", "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("mm_lang", "zh_CN", "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("webwxuvid", LoginHelper.LoginPageCookie.webwxuvid, "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("webwx_auth_ticket", LoginHelper.LoginPageCookie.webwx_auth_ticket, "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("webwx_data_ticket", LoginHelper.LoginPageCookie.webwx_data_ticket, "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("login_frequency", "1", "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("last_wxuin", "LoginHelper.LoginPageCookie.wxuin", "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("wxloadtime", "1495855277_expired", "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("wxuin", LoginHelper.LoginPageCookie.wxuin, "/", "wx.qq.com"));
-            reqCookies.Add(new Cookie("wxsid", LoginHelper.LoginPageCookie.wxsid, "/", "wx.qq.com"));
-
-            CookieContainer resCookies = null;
-
-            var SyncUrl = string.Format(SyncUrlTemple, LoginHelper.LoginPageCookie.wxsid, LoginHelper.LoginPageXml.skey, LoginHelper.LoginPageXml.pass_ticket);
-
-            if (LoginHelper.WX2)
-            {
-                SyncUrl = SyncUrl.Replace("//wx.", "//wx2.");
-            }
-
-            var dic = new Dictionary<string, string>();
-
-            dic.Add(WebClientUtil.JsonDataPrex, json);
-
-            return SerializeUtil.Deserialize<WXSync>(WebClientUtil.GetResponseOnCookie(SyncUrl, "post", reqCookies, out resCookies, dic, "application/json;charset=UTF-8"));
+            return null;
+            
         }
 
     }

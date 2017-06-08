@@ -142,7 +142,7 @@ namespace CSWeiXin.Weixin
             reqCookies.Add(new Cookie("wxsid", LoginHelper.LoginPageCookie.wxsid, "/", "wx.qq.com"));
             reqCookies.Add(new Cookie("wxuin", LoginHelper.LoginPageCookie.wxuin, "/", "wx.qq.com"));
 
-            return Image.FromStream(WebClientUtil.GetResponseOnCookie("https://wx.qq.com" + headerImageUrl, "get", reqCookies));
+            return Image.FromStream(WebClientUtil.GetImageOnCookie("https://wx.qq.com" + headerImageUrl, "get", reqCookies));
         }
 
         public static void SetImageAsync(ChatListSubItem sitem, string imageUrl)

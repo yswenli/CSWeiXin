@@ -153,59 +153,55 @@ namespace CSWeiXin.Weixin
         }
 
 
-        public static void GetLogin(string uuid, Action failed, Action successed)
+        public static void Login(string uuid, Action failed, Action successed)
         {
-            Task.Factory.StartNew(() =>
+            var loginUrl = string.Format(loginUrlTemple, uuid);
+
+            CookieContainer resCookies = null;
+
+            CookieContainer reqCookies = null;
+
+            var result = WebClientUtil.GetResponseOnCookie(loginUrl, "get", reqCookies, out resCookies, null);
+
+            if (result == "window.code=201;")
             {
-                var loginUrl = string.Format(loginUrlTemple, uuid);
-
-                CookieContainer resCookies = null;
-
-                CookieContainer reqCookies = null;
-
-                var result = WebClientUtil.GetResponseOnCookie(loginUrl, "get", reqCookies, out resCookies, null);
-
-                if (result == "window.code=201;")
+                do
                 {
-                    do
-                    {
-                        Thread.Sleep(500);
+                    Thread.Sleep(500);
 
-                        result = WebClientUtil.GetResponseOnCookie(loginUrl, "get", reqCookies, out resCookies, null);
-                    }
-                    while (result == "window.code=201;");
+                    result = WebClientUtil.GetResponseOnCookie(loginUrl, "get", reqCookies, out resCookies, null);
                 }
-                if (result.IndexOf("window.code=200;") > -1)
+                while (result == "window.code=201;");
+            }
+            if (result.IndexOf("window.code=200;") > -1)
+            {
+                result = result.Substring(result.IndexOf("window.redirect_uri=") + 21);
+                result = result.Substring(0, result.Length - 2);
+
+                LoginHelper.UUID = uuid;
+                LoginHelper.Scan = result.Substring(result.LastIndexOf("=") + 1);
+                LoginHelper.Ticket = result.Substring(result.IndexOf("ticket=") + 7);
+                LoginHelper.Ticket = LoginHelper.Ticket.Substring(0, LoginHelper.Ticket.IndexOf("&"));
+
+                if (result.IndexOf("//wx2.") > -1)
                 {
-                    result = result.Substring(result.IndexOf("window.redirect_uri=") + 21);
-                    result = result.Substring(0, result.Length - 2);
-
-                    LoginHelper.UUID = uuid;
-                    LoginHelper.Scan = result.Substring(result.LastIndexOf("=") + 1);
-                    LoginHelper.Ticket = result.Substring(result.IndexOf("ticket=") + 7);
-                    LoginHelper.Ticket = LoginHelper.Ticket.Substring(0, LoginHelper.Ticket.IndexOf("&"));
-
-                    if (result.IndexOf("//wx2.") > -1)
-                    {
-                        WX2 = true;
-                    }
-
-                    WebClientUtil.GetResponseOnCookie(result, "get", reqCookies, out resCookies, null);
-
-                    LoginHelper.PingdAsync();
-
-                    LoginHelper.StatReport();
-
-                    LoginHelper.LoginPage();
-
-                    successed?.Invoke();
-
-                    return;
+                    WX2 = true;
                 }
-                failed?.Invoke();
+
+                WebClientUtil.GetResponseOnCookie(result, "get", reqCookies, out resCookies, null);
+
+                LoginHelper.PingdAsync();
+
+                LoginHelper.StatReport();
+
+                LoginHelper.LoginPage();
+
+                successed?.Invoke();
+
                 return;
-            });
-
+            }
+            failed?.Invoke();
+            return;
         }
 
 

@@ -58,31 +58,49 @@ namespace CSWeiXin
 
         private void OnFailed()
         {
-            skinAnimator1.WaitAllAnimations();
-            skinAnimator1.ShowSync(label1, true, Animation.HorizBlind);
-
-            var uuid = LoginHelper.GetUUID();
-            var image = LoginHelper.GetQR(uuid);
-            new CalcTimeUtil().Start(25, OnChanged);
-            if (pictureBox1.InvokeRequired)
+            Task.Factory.StartNew(() =>
             {
-                pictureBox1.BeginInvoke(new Action(() =>
-                {
-                    pictureBox1.Image = image;
-                    skinAnimator1.HideSync(pictureBox1, true, Animation.Particles);
-                    skinAnimator1.WaitAllAnimations();
-                    skinAnimator1.ShowSync(pictureBox1, true, Animation.Mosaic);
-                }));
-            }
-            else
-            {
-                pictureBox1.Image = LoginHelper.GetQR(uuid);
-                skinAnimator1.HideSync(pictureBox1, true, Animation.Particles);
                 skinAnimator1.WaitAllAnimations();
-                skinAnimator1.ShowSync(pictureBox1, true, Animation.Mosaic);
-            }
 
-            LoginHelper.GetLogin(uuid, OnFailed, OnSuccessed);
+                skinAnimator1.ShowSync(label1, true, Animation.HorizBlind);
+
+                var uuid = LoginHelper.GetUUID();
+                var image = LoginHelper.GetQR(uuid);
+                new CalcTimeUtil().Start(25, OnChanged);
+
+                if (pictureBox1.InvokeRequired)
+                {
+                    pictureBox1.BeginInvoke(new Action(() =>
+                    {
+                        try
+                        {
+                            pictureBox1.Image = image;
+                            skinAnimator1.HideSync(pictureBox1, true, Animation.Particles);
+                            skinAnimator1.WaitAllAnimations();
+                            skinAnimator1.ShowSync(pictureBox1, true, Animation.Mosaic);
+                        }
+                        catch (Exception ex)
+                        {
+                            LogUtil.WriteLog("OnFailed", ex);
+                        }
+                    }));
+                }
+                else
+                {
+                    try
+                    {
+                        pictureBox1.Image = image;
+                        skinAnimator1.HideSync(pictureBox1, true, Animation.Particles);
+                        skinAnimator1.WaitAllAnimations();
+                        skinAnimator1.ShowSync(pictureBox1, true, Animation.Mosaic);
+                    }
+                    catch (Exception ex)
+                    {
+                        LogUtil.WriteLog("OnFailed", ex);
+                    }
+                }
+                LoginHelper.Login(uuid, OnFailed, OnSuccessed);
+            });
         }
 
         private void OnSuccessed()
