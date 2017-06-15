@@ -141,7 +141,6 @@ namespace CSWeiXin.Weixin
             reqCookies.Add(new Cookie("wxloadtime", CalcTimeUtil.GetUnixDateTime(new TimeSpan(365, 0, 0, 0)), "/", "wx.qq.com"));
             reqCookies.Add(new Cookie("wxsid", LoginHelper.LoginPageCookie.wxsid, "/", "wx.qq.com"));
             reqCookies.Add(new Cookie("wxuin", LoginHelper.LoginPageCookie.wxuin, "/", "wx.qq.com"));
-
             return Image.FromStream(WebClientUtil.GetImageOnCookie("https://wx.qq.com" + headerImageUrl, "get", reqCookies));
         }
 

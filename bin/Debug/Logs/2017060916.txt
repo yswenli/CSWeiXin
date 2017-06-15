@@ -1,0 +1,80 @@
+
+2017-06-09 16:54:03.335  GetResponseOnCookie
+  Parmas:String:https://pingtas.qq.com/webview/pingd?dm=wx.qq.com&pvi=3357722870&si=s3357722870&url=/&arg=%26lang%3Dzh_CN&ty=&rdm=wx.qq.com&rurl=/&rarg=%26lang%3Dzh_CN&adt=&r2=43209744&r3=-1&r4=1&fl=25.0&scr=1600x900&scl=24-bit&lg=zh-cn&jv=&tz=-8&ct=&ext=adid=&pf=&random=1495867248819
+  Message:System
+基础连接已经关闭: 连接被意外关闭。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 16:54:21.597  Program.Main
+  Parmas:
+  Message:mscorlib
+调用的目标发生了异常。
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Delegate.DynamicInvokeImpl(Object[] args)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   在 System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.WebBrowserBase.WndProc(Message& m)
+   在 System.Windows.Forms.WebBrowser.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   在 System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   在 System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   在 System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   在 CSWeiXin.Program.Main() 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Program.cs:行号 27
+
+2017-06-09 16:56:23.362  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=gb4AazGoiw==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 16:56:23.363  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496998537000&skey=@crypt_934bb4ea_02656566a1084120d4d440411cb43922&sid=cSnsk81B3WfSmwpl&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104403|3_684104387|11_684104391|13_684050116|201_1496998586|203_1496993420|1000_1496998340|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 16:57:24.621  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=we-QTh2DRA==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 16:57:51.526  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=4Y7niaj-Og==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 16:58:44.082  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=geyHeNpilQ==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 16:59:28.098  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=4ZQJGWpyGg==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 16:59:54.939  GetResponseOnCookie
+  Parmas:String:https://login.weixin.qq.com/cgi-bin/mmwebwx-bin/login?uuid=Qd1y9raMOg==&tip=1&_=1495675619027
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295

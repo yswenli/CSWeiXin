@@ -100,12 +100,16 @@ namespace CSWeiXin.Controls
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(500);
-                this.webBrowser1.BeginInvoke(new Action(()=>
+                this.webBrowser1.BeginInvoke(new Action(() =>
                 {
-                    this.webBrowser1.Document.InvokeScript("GoBottom", null);
+                    try
+                    {
+                        this.webBrowser1.Document.InvokeScript("GoBottom", null);
+                    }
+                    catch { }
                 }));
             });
-            
+
         }
 
         public static string GenerateMsgHtml(string userName, string msg, bool isMe = false)

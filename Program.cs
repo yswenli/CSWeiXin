@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CSWeiXin.Util;
 
 namespace CSWeiXin
 {
@@ -15,13 +16,23 @@ namespace CSWeiXin
         [STAThread]
         static void Main()
         {
-            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
-            ServicePointManager.MaxServicePoints = 0;
-            ServicePointManager.DefaultConnectionLimit = 1024;
+            try
+            {
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+                ServicePointManager.MaxServicePoints = 0;
+                ServicePointManager.DefaultConnectionLimit = 1024;
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new LoginForm());
+            }
+            catch(Exception ex)
+            {
+                LogUtil.WriteLog("Program.Main", ex);
+                MessageBox.Show("出现严重异常，已记录到日志");
+            }
+
+            
         }
     }
 }

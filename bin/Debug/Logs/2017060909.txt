@@ -1,0 +1,175 @@
+
+2017-06-09 09:47:18.141  GetResponseOnCookie
+  Parmas:String:https://pingtas.qq.com/webview/pingd?dm=wx.qq.com&pvi=6107437188&si=s6107437188&url=/&arg=%26lang%3Dzh_CN&ty=&rdm=wx.qq.com&rurl=/&rarg=%26lang%3Dzh_CN&adt=&r2=43209744&r3=-1&r4=1&fl=25.0&scr=1600x900&scl=24-bit&lg=zh-cn&jv=&tz=-8&ct=&ext=adid=&pf=&random=1495867248819
+  Message:System
+基础连接已经关闭: 连接被意外关闭。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:48:42.014  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496972896000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684102085|2_684104288|3_684104274|11_684104092|13_684050116|201_1496972944|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:49:15.447  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496972930000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104292|3_684104274|11_684104092|13_684050116|201_1496972978|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:50:07.580  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496972982000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104295|3_684104274|11_684104092|13_684050116|201_1496973030|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:50:54.007  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973028000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104296|3_684104274|11_684104092|13_684050116|201_1496973076|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+基础连接已经关闭: 接收时发生错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:51:23.940  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973058000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104297|3_684104274|11_684104092|13_684050116|201_1496973076|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:51:49.958  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973084000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104297|3_684104274|11_684104092|13_684050116|201_1496973076|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:52:20.361  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973115000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104298|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:53:01.999  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973156000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:53:28.016  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973183000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+基础连接已经关闭: 接收时发生错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:53:54.033  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973209000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+基础连接已经关闭: 接收时发生错误。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:54:20.037  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973235000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:54:46.054  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973261000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:55:12.074  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973287000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:55:38.092  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973313000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:56:04.110  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973339000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:56:30.128  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973365000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:56:56.147  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973391000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:57:22.165  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973417000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:57:48.183  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973443000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104274|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:58:14.718  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973469000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104300|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:58:40.736  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973495000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104300|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:59:06.756  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973521000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104300|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:59:32.774  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973547000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104300|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295
+
+2017-06-09 09:59:58.793  GetResponseOnCookie
+  Parmas:String:https://webpush.wx.qq.com/cgi-bin/mmwebwx-bin/synccheck?r=1496973573000&skey=@crypt_934bb4ea_33ee9d8b471e5be4e3c8727bade9ab47&sid=do704KmyoerGrkB9&uin=673425640&deviceid=e139881526627243&synckey=1_684104290|2_684104299|3_684104300|11_684104092|13_684050116|201_1496973162|1000_1496968921|1001_1496968951&_=1496220248449
+  Message:System
+操作超时
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 CSWeiXin.Util.WebClientUtil.GetResponseOnCookie(String url, String method, CookieContainer reqCookies, CookieContainer& resCookies, Dictionary`2 params, String contentType, Boolean wx2, Int32 timeOut) 位置 E:\百度云\Develop\案例\C#微信\CSWeiXin\Util\WebClientUtil.cs:行号 295

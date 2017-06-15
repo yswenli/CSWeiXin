@@ -124,11 +124,27 @@ namespace CSWeiXin.Util
 
             try
             {
-                result = SerializeUtil.Deserialize<Dictionary<string, string>>(AESUtil.Decrypt(File.ReadAllText(DataPath + "History.json"), aesKey));
+                if (File.Exists(DataPath + "History.json"))
+                    result = SerializeUtil.Deserialize<Dictionary<string, string>>(AESUtil.Decrypt(File.ReadAllText(DataPath + "History.json"), aesKey));
             }
             catch { }
 
             return result;
+        }
+
+
+        public static void ClearCaches()
+        {
+            try
+            {
+                var files = Directory.GetFiles(DataPath);
+                foreach (var item in files)
+                {
+                    File.Delete(item);
+                }
+            }
+            catch { }
+
         }
 
     }

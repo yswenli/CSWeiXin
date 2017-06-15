@@ -222,6 +222,11 @@ namespace CSWeiXin.Weixin
             return result;
         }
 
+        public static void ClearCaches()
+        {
+            DataUtil.ClearCaches();
+        }
+
 
 
     }

@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
-using CCWin;
 using CCWin.SkinControl;
 using CSWeiXin.Util;
 using CSWeiXin.Weixin;
@@ -68,9 +55,9 @@ namespace CSWeiXin
                 var image = LoginHelper.GetQR(uuid);
                 new CalcTimeUtil().Start(25, OnChanged);
 
-                if (pictureBox1.InvokeRequired)
+                if (this.InvokeRequired)
                 {
-                    pictureBox1.BeginInvoke(new Action(() =>
+                    this.BeginInvoke(new Action(() =>
                     {
                         try
                         {
@@ -121,7 +108,7 @@ namespace CSWeiXin
 
         private void OnChanged(int seconds)
         {
-            label2.BeginInvoke(new Action(() =>
+            this.BeginInvoke(new Action(() =>
             {
                 label2.Text = seconds.ToString();
             }));

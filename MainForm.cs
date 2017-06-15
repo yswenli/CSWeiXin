@@ -17,9 +17,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -121,12 +123,13 @@ namespace CSWeiXin
                     if (isInit && this.TokenExpired)
                     {
                         MessageBox.Show("登录信息已过期，请重新扫码！", "CSWeixin — developer:wenli 2017");
+
+                        LoginHelper.ClearCaches();
+
                         this.BeginInvoke(new Action(() =>
                         {
-                            LoginForm.ValidationFailure = true;
-                            LoginForm.Show();
-                            isAutoClose = true;
-                            this.Close();
+                            Process.Start(this.GetType().Assembly.Location);
+                            Environment.Exit(-1);
                         }));
                         break;
                     }
@@ -251,7 +254,7 @@ namespace CSWeiXin
                             {
                                 nickName = user.NickName;
                             }
-                            if (user.UserName == item.FromUserName)
+                            if (item.FromUserName == choose)
                             {
                                 displayer.AppendMsg(nickName, item.Content);
                             }
@@ -350,6 +353,7 @@ namespace CSWeiXin
         {
             if (e.KeyCode == Keys.Enter)
             {
+                textBox3.Text = textBox3.Text.Substring(0, textBox3.Text.Length - 2);
                 this.button1_Click(null, null);
             }
         }
